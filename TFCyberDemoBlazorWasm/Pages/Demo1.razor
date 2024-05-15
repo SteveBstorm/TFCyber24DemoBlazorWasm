@@ -1,0 +1,34 @@
+﻿@page "/demo1"
+<h3 class="@(MyValue == 45 ? "maclasse" : "")">Demo1</h3>
+@*
+    Bloc de commentaire @*
+    @ permet d'utiliser des syntaxe c# tel que les if, for, foreach, ...
+*@
+@* @for(int i=0; i < 10; i++)
+{
+    <p>@i</p>
+} *@
+<p>@MyValue</p>
+@*Binding one way : lecture de propriété se trouvant dans 
+    la classe c#, à partir de l'html
+*@
+<input @onblur="ReponsePourAllan" type="number" @bind-value="MyValue" />
+<br />
+<button @onclick="Increment" disabled="@(MyValue >= 50)">+</button>
+<button @onclick="Decrement" disabled="@(MyValue <= 40)">-</button>
+<button @onclick="() => ModifyValue(69)">Modifier</button>
+@*
+    le binding d'event ne demande pas de paranthèse 
+    s'il n'y a pas de paramètre à faire passer à la méthode
+    puisqu'il s'agit d'une simple liaison entre un event JS
+    et une méthode c#
+
+    Dans le cas ou vous auriez des paramètres à faire passer,
+    il faut utiliser une lambda expression pour DECLENCHER 
+    la méthode directement
+*@
+@code{
+    // dans le @code{} => on remet les pieds dans la classe c#
+    // à supprimer si vous avez un fichier c# à côté
+}
+

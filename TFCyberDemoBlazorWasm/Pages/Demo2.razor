@@ -1,0 +1,13 @@
+﻿@page "/demo2"
+<h3>Demo2</h3>
+<p>Value de MyProp : @MyProp</p>
+<p>Value de MyString : @MyString</p>
+<button @onclick="SimulateRender">Simuler</button>
+<hr />
+<Demo2Enfant Name="Peigne cul" 
+             ValueFromParent="@MyProp"
+             Reponse="ReceptionReponse"
+             />
+@code {
+
+}
