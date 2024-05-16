@@ -1,6 +1,6 @@
 ﻿@page "/"
 @inject NavigationManager Nav
-
+<div style="@(switchColor ? "background-color:chartreuse;" : "background-color : deeppink;")">
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, les glandus!</h1>
@@ -10,10 +10,26 @@
 Welcome to your new app.
 <input type="number" @bind-value="Value" />
 <button @onclick="redirect">Click ici</button>
-
+</div>
 @code{
     public int Value { get; set; }
     public void redirect(){
         Nav.NavigateTo("cible/" + Value);
     }
+
+    public bool switchColor { get; set; }
+    protected async override Task OnAfterRenderAsync(bool firstRender){
+   
+            switchColor = !switchColor; 
+            await Task.Delay(1000);
+            StateHasChanged();
+
+        //int x = MaMethode().Result;
+    } 
+
+    // public async Task<int> MaMethode(){
+    //     return 5;
+    // }
+
+
 }
