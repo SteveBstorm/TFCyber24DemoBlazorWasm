@@ -1,0 +1,12 @@
+﻿<h3>Quizz</h3>
+<p>Bonjour @Prenom</p>
+<p>Voici la question N° @(Counter + 1)</p>
+<p>@Questions[Counter]</p>
+
+<button class="btn btn-success btn-sm" 
+        @onclick="@(() => ValiderReponse("Oui"))">OUI</button>
+<button class="btn btn-danger btn-sm" 
+        @onclick="@(() => ValiderReponse("Non"))">NON</button>
+@code {
+
+}
