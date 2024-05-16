@@ -10,7 +10,7 @@ namespace TFCyberDemoBlazorWasm.Models
         [Required]
         [MinLength(10)]
         public string Description { get; set; }
-        [Range(1977, int.MaxValue)]
+        [Range(1977, int.MaxValue, ErrorMessage ="Pas de film avant 1977")]
         public int AnneeDeSortie { get; set; }
     }
 }

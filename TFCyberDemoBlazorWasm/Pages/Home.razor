@@ -1,7 +1,19 @@
 ﻿@page "/"
+@inject NavigationManager Nav
 
 <PageTitle>Home</PageTitle>
 
 <h1>Hello, les glandus!</h1>
 
+
+
 Welcome to your new app.
+<input type="number" @bind-value="Value" />
+<button @onclick="redirect">Click ici</button>
+
+@code{
+    public int Value { get; set; }
+    public void redirect(){
+        Nav.NavigateTo("cible/" + Value);
+    }
+}

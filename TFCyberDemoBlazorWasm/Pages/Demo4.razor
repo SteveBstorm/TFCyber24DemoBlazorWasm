@@ -1,19 +1,25 @@
-﻿<h3>Demo4</h3>
+﻿@page "/demo4"
+<h3>Demo4</h3>
 
 <EditForm Model="MyFormObject" 
-          OnSubmit="ValidationFormulaire" 
+          OnValidSubmit="ValidationFormulaire" 
           class="form-group">
+          <DataAnnotationsValidator />
+          <ValidationSummary />
     <div>
         Id : <InputNumber @bind-Value="MyFormObject.Id" class="form-control" />
     </div>
     <div>
         Titre : <InputText @bind-Value="MyFormObject.Title" class="form-control" />
+        <ValidationMessage For="() => MyFormObject.Title" />
     </div>
     <div>
         Description : <InputTextArea @bind-Value="MyFormObject.Description" class="form-control" />
+        <ValidationMessage For="() => MyFormObject.Description" />
     </div>
     <div>
         Année de sortie : <InputNumber @bind-Value="MyFormObject.AnneeDeSortie" class="form-control" />
+        <ValidationMessage For="() => MyFormObject.AnneeDeSortie" />
     </div>
     <button class="btn btn-outline-dark">Valider</button>
 </EditForm>
