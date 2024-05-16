@@ -1,0 +1,28 @@
+﻿@page "/demo3"
+<h3>Demo3</h3>
+<div style="border : 1px black solid;
+            max-height : 200px;
+            overflow-y: scroll;
+            ">
+<ul>
+    @foreach(Guid g in MaSuperListe)
+    {
+        <li>@g</li>
+    }
+  </ul>
+</div>
+
+<hr />
+<div style="border : 1px black solid;
+            max-height : 200px;
+            overflow-y: scroll;
+            ">
+    <ul>
+        <Virtualize Items="MaSuperListe" Context="g">
+            <li>@g</li>
+        </Virtualize>
+    </ul>
+</div>
+@code {
+
+}
